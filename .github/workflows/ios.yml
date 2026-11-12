@@ -6,14 +6,19 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Scarica Godot 4.7.2 e Template iOS
+      - name: Scarica Ultimo Godot Stabile e Template
         run: |
-          curl -L -f -o godot.zip https://github.com
+          TAG=$(curl -s https://github.com | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+          VER_FOLDER=$(echo $TAG | sed 's/-/./g')
+          echo "Scarico Godot versione: $TAG (Cartella: $VER_FOLDER)"
+          
+          curl -L -f -o godot.zip "https://github.com{TAG}/Godot_v${TAG}_macos.universal.zip"
           unzip -q godot.zip
-          mkdir -p "$HOME/Library/Application Support/Godot/export_templates/4.7.2.stable"
-          curl -L -f -o templates.tpz https://github.com
+          
+          mkdir -p "$HOME/Library/Application Support/Godot/export_templates/${VER_FOLDER}"
+          curl -L -f -o templates.tpz "https://github.com{TAG}/Godot_v${TAG}_export_templates.tpz"
           unzip -q templates.tpz -d templates_tmp
-          mv templates_tmp/templates/* "$HOME/Library/Application Support/Godot/export_templates/4.7.2.stable/"
+          mv templates_tmp/templates/* "$HOME/Library/Application Support/Godot/export_templates/${VER_FOLDER}/"
       - name: Esporta Progetto Xcode
         run: |
           mkdir -p ios_build
