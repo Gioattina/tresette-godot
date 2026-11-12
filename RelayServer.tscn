@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c75sdxuo0yqiu"]
+
+[ext_resource type="Script" uid="uid://vsf3f2pchj3s" path="res://RelayServer.gd" id="1_nfd8o"]
+
+[node name="Node" type="Node" unique_id=1005607941]
+script = ExtResource("1_nfd8o")

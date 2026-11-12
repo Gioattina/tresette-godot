@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://2pheylmh33uh"]
+
+[ext_resource type="Script" uid="uid://og012woraud3" path="res://MenuPrincipale.gd" id="1_dm5fq"]
+
+[node name="Control" type="Control" unique_id=650410676]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dm5fq")
+
+[node name="PannelloConnessione" type="VBoxContainer" parent="." unique_id=910477995]
+custom_minimum_size = Vector2(700, 0)
+custom_maximum_size = Vector2(700, -1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -959.5
+offset_right = 350.0
+offset_bottom = 959.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Nome_Giocatore" type="LineEdit" parent="PannelloConnessione" unique_id=861906241]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 90)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Seleziona Nome:"
+
+[node name="Crea_Stanza" type="Button" parent="PannelloConnessione" unique_id=1193606750]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 130)
+custom_maximum_size = Vector2(-1, 130)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "CREA STANZA
+"
+
+[node name="CODICE_STANZA" type="LineEdit" parent="PannelloConnessione" unique_id=2134683683]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+placeholder_text = "Password 5 numeri"
+max_length = 5
+
+[node name="Unisciti_Stanza" type="Button" parent="PannelloConnessione" unique_id=1698095621]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "UNISCITI A UNA STANZA
+
+"
+
+[node name="LabelStato" type="Label" parent="PannelloConnessione" unique_id=1229675266]
+layout_mode = 2
+
+[node name="PannelloAttesa" type="VBoxContainer" parent="." unique_id=1653543918]
+visible = false
+layout_mode = 0
+offset_left = 200.0
+offset_top = 500.0
+offset_right = 880.0
+offset_bottom = 1300.0
+
+[node name="LabelStanzaID" type="Label" parent="PannelloAttesa" unique_id=1649022107]
+layout_mode = 2
+text = "In attesa dei giocatori..."
+
+[node name="ListaGiocatori" type="ItemList" parent="PannelloAttesa" unique_id=666325571]
+layout_mode = 2
+
+[node name="BtnAvviaPartita" type="Button" parent="PannelloAttesa" unique_id=1726562515]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Avvia Partita Tressette
+"

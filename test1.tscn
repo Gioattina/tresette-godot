@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://biqdnoycc7pda"]
+
+[ext_resource type="Script" uid="uid://h6s22bi75yun" path="res://Script/GestoreGioco.gd" id="1_oucmq"]
+
+[node name="Node2D" type="Node2D" unique_id=1857596499]
+script = ExtResource("1_oucmq")
